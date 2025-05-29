@@ -128,6 +128,8 @@ _For more detail, please refer to the [Documentation](https://docs.google.com/do
 
 Here goes the diagram made to explain the algorithm
 
+<img src="resources/Diagram/BookAlgorithm.png" alt="Diagram"></img>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
