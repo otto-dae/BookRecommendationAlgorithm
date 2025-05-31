@@ -1,6 +1,8 @@
-#include "headers/test.hpp"
-#include <string>
 #include <iostream>
+#include <fstream>
+#include <pqxx/pqxx>
+#include <string>
+
 
 using namespace std;
 
