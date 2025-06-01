@@ -30,6 +30,8 @@ int main(){
             //Even more testing stuff
             //get10Books(db);
 
+            get10FantasyBooks(db);
+
         }catch(const std::exception& e ){
             cout << "Query error: " << e.what() << endl;
         }
