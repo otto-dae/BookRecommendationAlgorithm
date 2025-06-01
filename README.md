@@ -100,13 +100,14 @@ To get the project up and running with Git do:
 
 ### Compile and run
 
+Using g++ compiler
 1. Write in your terminal in the project's directory
    ```sh
-   here goes the compiling line
+    g++ classes/GeneralFunctions/GeneralFunctions.cpp classes/DB/DBConn.cpp   classes/DB/DBFunctions.cpp  main.cpp -o main -lpqxx -lpq
    ```
 2. Run the compiled code
    ```sh
-   here goes the running line
+   ./main 
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

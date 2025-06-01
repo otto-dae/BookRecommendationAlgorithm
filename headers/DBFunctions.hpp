@@ -3,6 +3,7 @@
 
 #include "DBConn.hpp"
 
-void get10Books(DBConn& db);
-void get10FantasyBooks(DBConn& db);
+/*void get10Books(DBConn& db);
+void get10FantasyBooks(DBConn& db);*/
+void getBooksByName(DBConn& db);
 #endif
