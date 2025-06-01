@@ -12,11 +12,9 @@ public:
 
     bool connect(const std::string& conn_str);
 
-    ppqx::connection* getConnection();
-};
+    pqxx::connection* getConnection();
 
 private:
     pqxx::connection* conn;
-
-
+};
 #endif
