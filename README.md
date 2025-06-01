@@ -103,7 +103,7 @@ To get the project up and running with Git do:
 Using g++ compiler
 1. Write in your terminal in the project's directory
    ```sh
-    g++ classes/GeneralFunctions/GeneralFunctions.cpp classes/DB/DBConn.cpp   classes/DB/DBFunctions.cpp  main.cpp -o main -lpqxx -lpq
+    g++ classes/GeneralFunctions/GeneralFunctions.cpp classes/DB/DBConn.cpp classes/DB/DBFunctions.cpp  main.cpp -o main -lpqxx -lpq
    ```
 2. Run the compiled code
    ```sh
