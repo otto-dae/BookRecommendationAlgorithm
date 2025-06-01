@@ -1,4 +1,4 @@
-#include "../../headers/DBConn.hpp"
+#include "../headers/DBConn.hpp"
 #include <fstream>
 #include <iostream>
 #include <string>

@@ -94,7 +94,7 @@ This repository is used to save and manage our algorithm and its structure. If y
 ### Get the code
 
 To get the project up and running with Git do:
-  ```sh
+  ```bash
   git clone https://github.com/otto-dae/BookRecommendationAlgorithm.git
   ```
 
@@ -106,7 +106,7 @@ Using g++ compiler
     g++ classes/GeneralFunctions/GeneralFunctions.cpp classes/DB/DBConn.cpp classes/DB/DBFunctions.cpp  main.cpp -o main -lpqxx -lpq
    ```
 2. Run the compiled code
-   ```sh
+   ```powershell
    ./main 
    ```
 

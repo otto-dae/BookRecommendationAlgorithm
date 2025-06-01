@@ -1,4 +1,4 @@
-#include "../../headers/GeneralFunctions.hpp"
+#include "../headers/GeneralFunctions.hpp"
 #include <iostream>
 #include <fstream>
 #include <string>
