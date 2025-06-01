@@ -1,4 +1,5 @@
 #include "../headers/DBFunctions.hpp" 
+#include "../headers/GenreList.hpp" 
 #include <string>
 #include <pqxx/pqxx>
 #include <iostream>
@@ -22,9 +23,7 @@ void executeQuery(DBConn& db, const function<void(pqxx::work&)>& fnQuery){
 }
 
 Book* loadBooks(DBConn& db){
-
     Book* head = nullptr;
-
     executeQuery(db, [&head](pqxx::work& txn){
         pqxx::result r = txn.exec(
             "SELECT \"Id\", \"Title\", \"Main_Genre\", \"Sub_Genre\", \"Rating\" "
@@ -42,12 +41,57 @@ Book* loadBooks(DBConn& db){
             new_Book->next = nullptr;
 
             insertBook(head, new_Book);
-
         }
     });
-
     return head;
 }
+
+Genre* loadGenres(DBConn& db){
+    Genre* genreHead = nullptr;
+    executeQuery(db, [&genreHead](pqxx::work& txn){
+
+        pqxx::result r = txn.exec(
+            "SELECT * "
+            "FROM \"public\".\"Genres\" "
+        );
+        
+        int counter = 1;
+        for(const auto& row : r){
+            Genre* new_Genre = new Genre;
+            new_Genre->Id = counter++;
+            new_Genre->Title = row["\"Title\""].c_str();
+            new_Genre->next = nullptr;
+            insertGenre(genreHead, new_Genre);
+            cout << new_Genre->Id << ".- "<< new_Genre->Title << endl;
+        }    
+    });
+
+    return genreHead;
+}
+
+SubGenre* loadSubGenres(DBConn& db, std::string SubGenrestr){
+    SubGenre* subGenreHead = nullptr;
+    executeQuery(db, [&subGenreHead, SubGenrestr](pqxx::work& txn){
+
+        pqxx::result r = txn.exec(
+            "SELECT * "
+            "FROM \"public\".\"Sub_Genres\" WHERE \"Main_Genre\" = '" + SubGenrestr + "'");
+            int counter = 1;
+            for(const auto& row : r){
+                SubGenre* new_SubGenre = new SubGenre;
+                new_SubGenre->Id = counter++;
+                new_SubGenre->Title = row["\"Title\""].c_str();
+                new_SubGenre->next = nullptr;
+                insertSubGenre(subGenreHead, new_SubGenre);
+                cout << new_SubGenre->Id << ".- "<< new_SubGenre->Title << endl;
+            }   
+            
+        
+    });
+
+    return subGenreHead;
+}
+
 
 /*
 void get10FantasyBooks(DBConn& db){
