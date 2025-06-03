@@ -21,8 +21,6 @@
 [![Contributors][contributors-shield]][contributors-url]
 
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -117,7 +115,8 @@ Using g++ compiler
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Here goes a short and simple description of our project and algorithm fucntionality  
+Ana Escrigbe aqui como funciona nuestro codigo. Que no te de miedo
+
 _For more detail, please refer to the [Documentation](https://docs.google.com/document/d/1D7pt2AdXyCBtn2zCjjXFxsHSj3dS0GeMhSjjwgvE5-o/edit?usp=sharing)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
