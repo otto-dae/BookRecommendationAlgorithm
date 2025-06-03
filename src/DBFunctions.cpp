@@ -74,6 +74,7 @@ SubGenre* loadSubGenres(DBConn& db, std::string SubGenrestr){
     executeQuery(db, [&subGenreHead, SubGenrestr](pqxx::work& txn){
 
         pqxx::result r = txn.exec(
+            // esto esta feo no le hagan caso
             "SELECT * "
             "FROM \"public\".\"Sub_Genres\" WHERE \"Main_Genre\" = '" + SubGenrestr + "'");
             int counter = 1;

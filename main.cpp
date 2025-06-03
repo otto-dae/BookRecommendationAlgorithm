@@ -45,7 +45,7 @@ void Menu(){
         cout << "Basic Recommendation Alogorithm for Books using Amazon DB" << endl;
         cout << "1.- Search by Name" << endl;
         cout << "2.- Search by Genre" << endl;
-        cout << "3.- Search by Game and Sub Genre" << endl;
+        cout << "3.- Search by Genre and Sub Genre" << endl;
         cout << "4.- Clean console" << endl;
         cout << "5.- Exit console" << endl;\
         cout << "Insert desired search" << endl;

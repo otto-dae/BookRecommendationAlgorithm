@@ -95,7 +95,8 @@ void showMatches(Book* head, float minScoreMatch){
         return;
     }
     
-    head = mergeSort(head);
+    head = mergeSort(head); //ahorita te explico
+
     Book* actual=head;
     while (actual != nullptr){
 

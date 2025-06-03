@@ -9,7 +9,7 @@ struct Book{
     std::string Sub_Genre;
     float Rating;
     float matchScore;
-    Book* next;
+    Book* next; 
 };
 
 void insertBook(Book*& head, Book* newBook);
