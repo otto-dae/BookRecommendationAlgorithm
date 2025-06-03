@@ -164,20 +164,22 @@ void searchBySubGenre(Book* head, std::string& keywordGenre, std::string& keywor
         string currentSubGenre = current->Sub_Genre;
         transform(currentGenre.begin(), currentGenre.end(), currentGenre.begin(), ::tolower);
         transform(keywordGenre.begin(), keywordGenre.end(), keywordGenre.begin(), ::tolower);
-        transform(keywordSubgenre.begin(), keywordSubgenre.end(), keywordSubgenre.begin(), ::tolower);              
+        transform(keywordSubgenre.begin(), keywordSubgenre.end(), keywordSubgenre.begin(), ::tolower);   
+        transform(currentSubGenre.begin(), currentSubGenre.end(), currentSubGenre.begin(), ::tolower);
+           
         
 
         if(currentGenre.find(keywordGenre) != string::npos){
-            current->matchScore += 1.0f;
+            current->matchScore += 3.0f;
             current->matchScore += current->Rating;
             if(currentSubGenre.find(keywordSubgenre) != string::npos){
-                current->matchScore += 2.0f;
+                current->matchScore += 6.6f;
             }
         }
 
         current = current->next;
     }
 
-    showMatches(head, 5.5);
+    showMatches(head, 6.5);
     
 }
