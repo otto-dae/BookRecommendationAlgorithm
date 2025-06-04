@@ -15,7 +15,7 @@ WORKDIR /app
 COPY . .
 
 # Build on image make
-RUN g++ src/*.cpp -Iheaders -lpqxx -lpq -o main
+RUN  g++ src/BookList.cpp src/DBConn.cpp src/DBFunctions.cpp src/GeneralFunctions.cpp src/GenreList.cpp src/SubGenreList.cpp  main.cpp -o main -lpqxx -lpq
 
 #Default command 
 CMD ["./main"]

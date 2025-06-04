@@ -3,10 +3,11 @@
 #include <string>
 #include <pqxx/pqxx>
 #include <iostream>
+#include <functional>
 
 using namespace std;
 
-void executeQuery(DBConn& db, const function<void(pqxx::work&)>& fnQuery){
+void executeQuery(DBConn& db, const std::function<void(pqxx::work&)>& fnQuery){
 
     pqxx::connection* conn = db.getConnection();
 
