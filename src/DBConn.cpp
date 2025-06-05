@@ -1,4 +1,5 @@
 #include "../headers/DBConn.hpp"
+#include "../headers/GeneralFunctions.hpp"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -13,6 +14,7 @@ DBConn::~DBConn(){
     if (conn != nullptr){
         delete conn;
         conn = nullptr;
+        incrementCount(3);
     }
 }
 
@@ -23,11 +25,13 @@ bool DBConn::connect(const std::string& conn_str){
 
         if(conn->is_open()){
             cout << "Connection was succesful!" << endl;
+            incrementCount(2);
             return true;
         }else{
             cout << "Connection failed!" << endl;
             delete conn;
             conn = nullptr;
+            incrementCount(4);
             return false;
         }
 

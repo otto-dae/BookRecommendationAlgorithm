@@ -4,6 +4,8 @@
 #include <pqxx/pqxx>
 #include <iostream>
 #include <functional>
+#include "../headers/GeneralFunctions.hpp"
+
 
 using namespace std;
 
@@ -21,6 +23,7 @@ void executeQuery(DBConn& db, const std::function<void(pqxx::work&)>& fnQuery){
     }catch(const std::exception& e ){
         cout << "Query error: " << e.what() << endl;
     }
+    incrementCount(6);
 }
 
 Book* loadBooks(DBConn& db){
@@ -30,7 +33,6 @@ Book* loadBooks(DBConn& db){
             "SELECT \"Id\", \"Title\", \"Main_Genre\", \"Sub_Genre\", \"Rating\" "
             "FROM \"public\".\"Books\" "
         );
-                
         for(const auto& row : r){
             Book* new_Book = new Book();
             new_Book->Id = row["\"Id\""].as<int>();
@@ -40,10 +42,11 @@ Book* loadBooks(DBConn& db){
             new_Book->Rating = row["\"Rating\""].as<float>();
             new_Book->matchScore = 0.0f;
             new_Book->next = nullptr;
-
+            incrementCount(9);
             insertBook(head, new_Book);
         }
     });
+    incrementCount(3);
     return head;
 }
 
@@ -55,13 +58,14 @@ Genre* loadGenres(DBConn& db){
             "SELECT * "
             "FROM \"public\".\"Genres\" "
         );
-        
+        incrementCount(3);
         int counter = 1;
         for(const auto& row : r){
             Genre* new_Genre = new Genre;
             new_Genre->Id = counter++;
             new_Genre->Title = row["\"Title\""].c_str();
             new_Genre->next = nullptr;
+            incrementCount(6);
             insertGenre(genreHead, new_Genre);
             cout << new_Genre->Id << ".- "<< new_Genre->Title << endl;
         }    
@@ -78,6 +82,7 @@ SubGenre* loadSubGenres(DBConn& db, std::string SubGenrestr){
             // esto esta feo no le hagan caso
             "SELECT * "
             "FROM \"public\".\"Sub_Genres\" WHERE \"Main_Genre\" = '" + SubGenrestr + "'");
+            incrementCount(3);
             int counter = 1;
             for(const auto& row : r){
                 SubGenre* new_SubGenre = new SubGenre;
@@ -85,16 +90,15 @@ SubGenre* loadSubGenres(DBConn& db, std::string SubGenrestr){
                 new_SubGenre->Title = row["\"Title\""].c_str();
                 new_SubGenre->next = nullptr;
                 insertSubGenre(subGenreHead, new_SubGenre);
+                incrementCount(6);
                 cout << new_SubGenre->Id << ".- "<< new_SubGenre->Title << endl;
             }   
-            
-        
     });
 
     return subGenreHead;
 }
 
-
+//Testing
 /*
 void get10FantasyBooks(DBConn& db){
     executeQuery(db, [](pqxx::work& txn){

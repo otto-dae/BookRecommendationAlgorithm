@@ -77,9 +77,11 @@ This repository is used to save and manage our algorithm and its structure. If y
 
 * ![C++][C++]
 * ![Git][Git]
+* ![Docker][Docker]
 * ![GitHub][GitHub]
 * ![VSCode][VSCode]
 * ![StackOverFlow][StackOverFlow]
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -154,4 +156,4 @@ A visual interpratation of the program.
 [Git]: https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff
 [VSCode]: https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white
 [StackOverFlow]: https://img.shields.io/badge/-Stack%20Overflow-FE7A16?logo=stack-overflow&logoColor=white
-
+[Docker]: https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff

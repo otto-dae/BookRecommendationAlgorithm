@@ -4,6 +4,7 @@
 #include <string>
 
 using namespace std;
+long long operationCounter = 0;
 
 string getConnString(){
     string connstring;
@@ -17,4 +18,8 @@ string getConnString(){
     }else{
         cout << "FIle could not be opened" << endl;
     }
+}
+
+void incrementCount(int times){
+    operationCounter += times;
 }
