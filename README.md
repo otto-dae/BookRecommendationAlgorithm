@@ -91,21 +91,27 @@ This repository is used to save and manage our algorithm and its structure. If y
 
 ### Get the code
 
-To get the project up and running with Git do:
+To get the project up and running do:
   ```bash
   git clone https://github.com/otto-dae/BookRecommendationAlgorithm.git
   ```
 
 ### Compile and run
 
-Using g++ compiler
-1. Write in your terminal in the project's directory
-   ```sh
-    g++ classes/GeneralFunctions/GeneralFunctions.cpp classes/DB/DBConn.cpp classes/DB/DBFunctions.cpp  main.cpp -o main -lpqxx -lpq
+For properly running this project, having <a href=https://www.docker.com/get-started/>docker/docker desktop</a> is a must.
+
+Navigate to the project's root directory
+
+Also, this project has connection to a DB, you'll have to ask the owner for the credentials, this is just a Uni project, not much thought went behind security or env variables.
+
+Using Docker
+1. Write in your terminal in the project's root directory to build the docker image
    ```
-2. Run the compiled code
-   ```powershell
-   ./main 
+    docker build -t cpp-postgres .
+   ```
+2. Run the docker image with
+   ```
+   docker run -it cpp-postgres
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -115,9 +121,11 @@ Using g++ compiler
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Ana Escrigbe aqui como funciona nuestro codigo. Que no te de miedo, Hi
+When running the code you'll be prompted to choose how to filter/search a book, by title, by category, by category and sub-category.
 
-_For more detail, please refer to the [Documentation](https://docs.google.com/document/d/1D7pt2AdXyCBtn2zCjjXFxsHSj3dS0GeMhSjjwgvE5-o/edit?usp=sharing)_
+After choosing an option of category or sub-categoru when given the choice, the program will do a basic sum algorithm based on matches between your choices and the available books.
+
+_For more detail on how the program works, please refer to the [Documentation](https://docs.google.com/document/d/1D7pt2AdXyCBtn2zCjjXFxsHSj3dS0GeMhSjjwgvE5-o/edit?usp=sharing)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,8 +133,7 @@ _For more detail, please refer to the [Documentation](https://docs.google.com/do
 
 <!-- ROADMAP -->
 ## Diagram
-
-Here goes the diagram made to explain the algorithm
+A visual interpratation of the program.
 
 <img src="resources/Diagram/BookAlgorithm.png" alt="Diagram"></img>
 

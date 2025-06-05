@@ -8,8 +8,11 @@
 #include "headers/BookList.hpp"
 
 //BEHOLD THE #INCLUDE HELL (it just keeps getting bigger)
-
 //I swear to god I'm gonna do unspeakble things to whoever did pointers
+
+
+//We declare the menu function, the BDCOnn object for connections
+// and we declare all the headers needed 
 void Menu();
 using namespace std;
 DBConn db;
@@ -17,9 +20,11 @@ Book* headBook = nullptr;
 Genre* headGenre = nullptr;
 SubGenre* headSubGenre = nullptr;
 
-
+//main :D
 int main(){
 
+    //we verify that the connection to the DataBase is corret
+    //If it is true, we display the menu if something happened, we show the error
     string connString = GENERALFUNCTIONS_HPP::getConnString();
 
     if (db.connect(connString)) {
@@ -38,7 +43,7 @@ int main(){
     return 0;
 }
 
-
+//Menu
 void Menu(){
     int option;
     while(option != 4){
@@ -56,6 +61,8 @@ void Menu(){
         switch (option)
         {
         case 1: {
+
+            //Search book by title, we get the name/title and search it
             headBook = loadBooks(db);
             cout << "type a title or word to search: " << endl;
             string titleSearch;
@@ -64,6 +71,8 @@ void Menu(){
         break;
         }    
         case 2: {
+            //Search book by genre, we get the genre and search it
+
             headGenre = loadGenres(db);
             headBook = loadBooks(db);
             int genreSelector;
