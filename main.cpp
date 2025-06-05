@@ -7,9 +7,6 @@
 #include "headers/DBFunctions.hpp"
 #include "headers/BookList.hpp"
 
-//BEHOLD THE #INCLUDE HELL (it just keeps getting bigger)
-//I swear to god I'm gonna do unspeakble things to whoever did pointers
-
 
 //We declare the menu function, the BDCOnn object for connections
 // and we declare all the headers needed 
@@ -51,8 +48,7 @@ void Menu(){
         cout << "1.- Search by Name" << endl;
         cout << "2.- Search by Genre" << endl;
         cout << "3.- Search by Genre and Sub Genre" << endl;
-        cout << "4.- Clean console" << endl;
-        cout << "5.- Exit console" << endl;\
+        cout << "4.- Exit console" << endl;
         cout << "Insert desired search" << endl;
     
         cin >> option;
@@ -61,6 +57,7 @@ void Menu(){
         switch (option)
         {
         case 1: {
+            system("clear");
 
             //Search book by title, we get the name/title and search it
             headBook = loadBooks(db);
@@ -72,6 +69,7 @@ void Menu(){
         }    
         case 2: {
             //Search book by genre, we get the genre and search it
+            system("clear");
 
             headGenre = loadGenres(db);
             headBook = loadBooks(db);
@@ -86,6 +84,7 @@ void Menu(){
         }
     
         case 3: {
+            system("clear");
             headGenre = loadGenres(db);
             headBook = loadBooks(db);
             int genreSelector;
@@ -104,13 +103,9 @@ void Menu(){
         break;
         }
         case 4:
-            system("clear");
-        break;
-        case 5:
             return;
             break;
-    
-        
+ 
         default:
             cout << "Select a valid option" << endl;
             break;
