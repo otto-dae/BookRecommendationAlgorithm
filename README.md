@@ -1,23 +1,5 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 
 
@@ -30,7 +12,7 @@
 
 <h3 align="center">Book Recommendation algorithm</h3>
   <p align="center"> 
-    <a href="https://docs.google.com/document/d/1D7pt2AdXyCBtn2zCjjXFxsHSj3dS0GeMhSjjwgvE5-o/edit?usp=sharing"><strong>Explore the documentation »</strong></a>
+    <a href="https://docs.google.com/document/d/1zmMKIbaKBjm5JbrIW5RPzc1xCFaNuNt4Kg1RIb8TNJ0/edit?usp=sharing"><strong>Explore the documentation »</strong></a>
     <br />
     <br />
   </p>
@@ -123,11 +105,11 @@ Using Docker
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-When running the code you'll be prompted to choose how to filter/search a book, by title, by category, by category and sub-category.
+When running the code you'll be prompted to choose how to filter/search a book, by title, by category or by category and sub-category.
 
-After choosing an option of category or sub-categoru when given the choice, the program will do a basic sum algorithm based on matches between your choices and the available books.
+After choosing an option of category or sub-category when given the choice, the program will do a basic sum, search and sort algorithm based on matches between your choices and the available books.
 
-_For more detail on how the program works, please refer to the [Documentation](https://docs.google.com/document/d/1D7pt2AdXyCBtn2zCjjXFxsHSj3dS0GeMhSjjwgvE5-o/edit?usp=sharing)_
+_For more detail on how the program works, please refer to the [Documentation](hhttps://docs.google.com/document/d/1zmMKIbaKBjm5JbrIW5RPzc1xCFaNuNt4Kg1RIb8TNJ0/edit?usp=sharing)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
